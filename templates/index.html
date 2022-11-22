@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passport Request</title>
+  </head>
+  <body>
+    <h1>Request Passport</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+      <div>
+        <label>NIN:</label>
+        <input type="text" name="NIN"/>
+      </div>
+
+      <div>
+          <label>Name:</label>
+          <input type="text" name="name" id="name"/>
+          <label>Lastname:</label>
+          <input type="text" name="lastname"/>
+      </div>
+
+      <div>
+          <label>Phone Number:</label>
+          <input type="text" name="number"/>
+      </div>
+
+      <div>
+        <input
+          type="submit"
+          value="Submit"
+        />
+      </div>
+    </form>
+  </body>
+</html>
